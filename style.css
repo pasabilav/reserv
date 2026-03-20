@@ -1,0 +1,287 @@
+/* Основные стили сброса */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif; /* Похож на системный */
+}
+
+body {
+    background-color: #f0f0e8; /* Светло-бежевый фон как на скрине */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Имитация экрана телефона (для презентации) */
+.phone-emulator {
+    width: 375px; /* Ширина iPhone SE/8 */
+    height: 812px; /* Высота iPhone X */
+    background-color: #f0f0e8;
+    border: 12px solid #333;
+    border-radius: 40px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Шапка (Статус бар) --- */
+.status-bar {
+    height: 44px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 14px;
+    color: #000;
+    position: absolute;
+    top: 10px;
+    width: 100%;
+}
+
+.system-icons {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.text-lte {
+    font-size: 11px;
+}
+
+/* --- Кнопка уведомлений --- */
+.notification-container {
+    margin-top: 60px; /* Отступ от статус-бара */
+    padding: 0 16px;
+    display: flex;
+    justify-content: flex-end; /* Прижать вправо */
+}
+
+.notification-btn {
+    background-color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.bell-icon {
+    font-size: 16px;
+}
+
+/* --- Основная карточка документа --- */
+.content-area {
+    flex: 1; /* Занимает все свободное место */
+    padding: 20px 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.id-card {
+    background-color: #d8d8c8; /* Серо-бежевый фон карточки */
+    width: 100%;
+    max-height: 500px; /* Ограничим высоту как на скрине */
+    border-radius: 16px;
+    border: 1px solid #c0c0b0; /* Легкая рамка */
+    overflow: hidden; /* Чтобы полоса обновления не вылезала */
+    display: flex;
+    flex-direction: column;
+}
+
+.card-header {
+    padding: 20px 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: 500;
+    color: #000;
+}
+
+.coat-of-arms-container {
+    width: 35px; /* Ширина области, как на скрине */
+    display: flex;
+    justify-content: flex-end; /* Прижать логотип вправо к краю */
+}
+
+.tryzub-logo {
+    display: block;
+    width: auto;      /* Сохраняем пропорции */
+    height: 38px;    /* Подбираем высоту, чтобы смотрелось гармонично */
+    object-fit: contain; /* Гарантирует, что картинка не растянется */
+    /* Если у PNG не идеальный черный цвет, раскомментируйте строку ниже,
+       чтобы сделать его чисто черным с помощью фильтра: */
+    /* filter: brightness(0); */
+}
+
+.data-block {
+    padding: 0 20px 20px;
+    flex: 1; /* Растягиваем до разделителя */
+}
+
+.data-item {
+    margin-bottom: 12px;
+}
+
+.data-label {
+    font-size: 14px;
+    color: #606050; /* Серый текст метки */
+    margin-bottom: 2px;
+}
+
+.data-value {
+    font-size: 18px;
+    font-weight: 500;
+    color: #000;
+}
+
+.update-status-bar {
+    background-color: #605040;
+    color: #dcdcc8;
+    font-size: 12px;
+    padding: 6px 0;
+    overflow: hidden; /* Скрываем всё, что выходит за пределы */
+    display: flex;
+    width: 100%;
+}
+
+.marquee-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    /* Анимация теперь вешается на весь оберточный контейнер */
+    animation: continuous-scroll 15s linear infinite;
+}
+
+.marquee-content {
+    display: flex;
+    flex-shrink: 0; /* Запрещаем тексту сжиматься */
+    white-space: nowrap;
+}
+
+.marquee-content span {
+    display: inline-block;
+    padding-right: 0; /* Убираем лишние отступы, если они мешают */
+}
+
+/* Новая анимация: двигаем ровно на ширину одного блока с текстом */
+@keyframes continuous-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Двигаем влево ровно на ширину первой копии текста */
+        transform: translateX(-50%);
+    }
+}
+.card-footer {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.user-status {
+    font-size: 14px;
+    color: #606050;
+    margin-bottom: 8px;
+}
+
+.user-name {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #000;
+}
+
+/* Оранжевая кнопка плюс */
+.add-btn {
+    width: 50px;
+    height: 50px;
+    background-color: #f08010; /* Оранжевый */
+    border: none;
+    border-radius: 50%;
+    color: #000;
+    font-size: 30px;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* --- Нижнее меню --- */
+.bottom-nav {
+    height: 85px; /* Высота меню + home bar */
+    background-color: #fff;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.nav-item {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #000; /* Цвет по умолчанию */
+    width: 25%;
+}
+
+.nav-item.active {
+    /* Не выделяется цветом на скрине, только иконкой */
+}
+
+.nav-label {
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 4px;
+}
+
+/* Заглушки для иконок меню (черные квадраты/линии) */
+.nav-icon {
+    width: 24px;
+    height: 24px;
+    background-color: #000;
+    border-radius: 4px;
+}
+
+/* Имитация разных иконок */
+.icon-id { height: 18px; margin-top: 3px; }
+.icon-services { background: none; border: 2px solid #000; border-radius: 2px; display: grid; grid-template-columns: 1fr 1fr; gap: 2px; padding: 2px; }
+.icon-services::before, .icon-services::after { content: ''; background: #000; }
+.icon-vacancies { background: none; border: 2px solid #000; transform: rotate(45deg); width: 18px; height: 18px; }
+.icon-menu { background: none; display: flex; flex-direction: column; justify-content: space-between; height: 16px; margin-top: 4px;}
+.icon-menu::before, .icon-menu::after { content:''; background: #000; height: 2px; width: 24px; }
+.icon-menu span { background: #000; height: 2px; width: 24px; display: block;}
+
+
+/* Полоска домашней страницы iOS */
+.ios-home-bar {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 134px;
+    height: 5px;
+    background-color: #000;
+    border-radius: 3px;
+}

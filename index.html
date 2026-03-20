@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резерв+ Интерфейс</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="phone-emulator">
+
+    <div class="notification-container">
+        <button class="notification-btn">
+            Сповіщення
+            <span class="bell-icon">🔔</span>
+        </button>
+    </div>
+
+    <main class="content-area">
+        <div class="id-card">
+
+            <div class="card-header">
+                <div class="card-title-container">
+                    <h1 class="card-title">Резерв ID</h1>
+                </div>
+                <div class="coat-of-arms-container">
+                    <img src="img/trizub.png" alt="Герб України" class="tryzub-logo">
+                </div>
+            </div>
+
+            <div class="data-block">
+                <div class="data-item">
+                    <p class="data-label">Дата народження:</p>
+                    <p class="data-value">20.02.1998</p>
+                </div>
+                <div class="data-item">
+                    <p class="data-label">Відстрочка до:</p>
+                    <p class="data-value">03.05.2026</p>
+                </div>
+            </div>
+
+            <div class="update-status-bar">
+                <div class="marquee-wrapper">
+                    <div class="marquee-content">
+                        <span>• Документ оновлено о 10:01 | 02.02.2026 •&nbsp;</span>
+                        <span id="update-text-2"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <div class="user-info">
+                    <p class="user-status">Військовозобов'язаний</p>
+                    <p class="user-name">ДІДЕНКО<br>Едуард<br>Едуардович</p>
+                </div>
+                <button class="add-btn">+</button>
+            </div>
+
+        </div>
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="#" class="nav-item active">
+            <div class="nav-icon icon-id"></div>
+            <span class="nav-label">Резерв ID</span>
+        </a>
+        <a href="#" class="nav-item">
+            <div class="nav-icon icon-services"></div>
+            <span class="nav-label">Сервіси</span>
+        </a>
+        <a href="#" class="nav-item">
+            <div class="nav-icon icon-vacancies"></div>
+            <span class="nav-label">Вакансії</span>
+        </a>
+        <a href="#" class="nav-item">
+            <div class="nav-icon icon-menu"></div>
+            <span class="nav-label">Меню</span>
+        </a>
+        <div class="ios-home-bar"></div>
+    </nav>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
