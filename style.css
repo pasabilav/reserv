@@ -8,8 +8,8 @@
 
 :root {
     /* Цвета приложения */
-    --bg-main: #f0f0e8;
-    --card-bg: #d8d8c8;
+    --bg-main: #e1decd;
+    --card-bg: #d5d3be;
     --accent-orange: #f08010;
     --text-brown: #605040;
 }
@@ -91,6 +91,10 @@ body, html {
     overflow: hidden; /* Чтобы полоса обновления не вылезала */
     display: flex;
     flex-direction: column;
+}
+
+.bell-icon {
+    filter: brightness(0);
 }
 
 .card-header {
