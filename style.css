@@ -178,6 +178,9 @@ body, html {
     cursor: pointer;
     color: #000000;
     font-weight: 600;
+    display: flex;
+    justify-content: center; /* Центр по горизонтали */
+    align-items: center;     /* Центр по вертикали */
 }
 
 /* --- Нижнее меню --- */
