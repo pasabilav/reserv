@@ -106,16 +106,17 @@ body, html {
 
 /* Блок с данными (центр карточки) */
 .data-block {
-    padding: 10px 20px 30px 20px; /* Увеличил нижний паддинг до бегущей строки */
+    padding: 0px 20px 30px 20px; /* Увеличил нижний паддинг до бегущей строки */
     flex: 1; /* РАСТАЛКИВАЕТ шапку и футер, забирая пустоту в центре */
     flex-direction: column;
     justify-content: center;
 }
 
 .data-item { margin-bottom: 24px; }
-.data-label { color: #666; font-size: 16px; font-weight: 550;
-    letter-spacing: 0.05px;
+.data-label { color: #4f4c3f; font-size: 18px; font-weight: 550;
+    letter-spacing: 0.1px;
     margin-bottom: 4px;
+    margin-top: 5px;
     font-family: 'Inter', sans-serif;
     /*font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;*/
 }
@@ -164,9 +165,13 @@ body, html {
     background: transparent;
 }
 
-.user-status { font-family: 'Inter', sans-serif; color: #666; font-size: 16px; margin-bottom: 8px; font-weight: 550;letter-spacing: 0.05px; }
+.user-status { font-family: 'Inter', sans-serif; color: #666; font-size: 18px; margin-bottom: 8px; font-weight: 550;letter-spacing: 0.05px; }
 .user-name { font-family: 'Inter', sans-serif; font-size: 27px; font-weight: 500; line-height: 1; margin: 0; letter-spacing: 0.01px; }
-
+.bell {
+    height: 18px;
+    width: 18px;
+    padding-top: 5px;
+}
 .add-btn {
     width: 45px;
     height: 45px;
@@ -220,7 +225,7 @@ body, html {
 }
 
 .nav-label {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
     margin-top: 4px;
 }
@@ -232,7 +237,7 @@ body, html {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #000;
+    /*background-color: #000;*/
     border-radius: 4px;
 }
 
