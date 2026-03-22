@@ -38,6 +38,8 @@ body, html {
     font-size: 16px;
     color: #000;
     font-weight: 550;
+    letter-spacing: 0.05px;
+    font-family: 'Inter', sans-serif;
     background: #fff;
     border: none;
     padding: 8px 16px;
@@ -118,7 +120,7 @@ body, html {
     /*font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;*/
 }
 
-.data-value { font-size: 24px; font-weight: 500; margin: 0;
+.data-value { font-size: 20px; font-weight: 500; margin: 0;
     /* Небольшое сужение межбуквенного расстояния для сходства */
     letter-spacing: -0.02em;
     font-family: 'Inter', sans-serif;
@@ -126,12 +128,14 @@ body, html {
 
 /* 6. БЕГУЩАЯ СТРОКА */
 .update-status-bar {
-    background-color: var(--accent-brown);
+    /* background-color: var(--accent-brown); */
+    background-color: #6b4b1a;
     color: #ffffff;
-    padding: 11px 0;
-    font-size: 17px;
+    padding: 4px 0;
+    font-size: 18px;
     overflow: hidden; /* Скрываем то, что выходит за границы экрана */
     white-space: nowrap;
+    font-family: 'Inter', sans-serif;
 }
 
 .marquee-wrapper {
@@ -160,8 +164,8 @@ body, html {
     background: transparent;
 }
 
-.user-status { color: #666; font-size: 15px; margin-bottom: 8px; }
-.user-name { font-size: 26px; font-weight: 600; line-height: 1.2; margin: 0; }
+.user-status { font-family: 'Inter', sans-serif; color: #666; font-size: 16px; margin-bottom: 8px; font-weight: 550;letter-spacing: 0.05px; }
+.user-name { font-family: 'Inter', sans-serif; font-size: 27px; font-weight: 500; line-height: 1.2; margin: 0; letter-spacing: 0.01px; }
 
 .add-btn {
     width: 56px;
