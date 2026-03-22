@@ -165,15 +165,15 @@ body, html {
 }
 
 .user-status { font-family: 'Inter', sans-serif; color: #666; font-size: 16px; margin-bottom: 8px; font-weight: 550;letter-spacing: 0.05px; }
-.user-name { font-family: 'Inter', sans-serif; font-size: 27px; font-weight: 500; line-height: 1.2; margin: 0; letter-spacing: 0.01px; }
+.user-name { font-family: 'Inter', sans-serif; font-size: 27px; font-weight: 500; line-height: 1; margin: 0; letter-spacing: 0.01px; }
 
 .add-btn {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     background-color: var(--accent-orange);
     border: none;
     border-radius: 50%;
-    font-size: 44px;
+    font-size: 42px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     cursor: pointer;
     color: #000000;
@@ -181,8 +181,14 @@ body, html {
     display: flex;
     justify-content: center; /* Центр по горизонтали */
     align-items: center;     /* Центр по вертикали */
-    line-height: 0;
+    /*line-height: 0;*/
     /*padding-top: 2px;*/
+}
+.button span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* --- Нижнее меню --- */
@@ -209,11 +215,12 @@ body, html {
 }
 
 .nav-item.active {
+    font-weight: 600;
     /* Не выделяется цветом на скрине, только иконкой */
 }
 
 .nav-label {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 500;
     margin-top: 4px;
 }
