@@ -181,6 +181,8 @@ body, html {
     display: flex;
     justify-content: center; /* Центр по горизонтали */
     align-items: center;     /* Центр по вертикали */
+    line-height: 0;
+    /*padding-top: 2px;*/
 }
 
 /* --- Нижнее меню --- */
