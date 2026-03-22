@@ -11,11 +11,15 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="МойСайт">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
     <link rel="apple-touch-icon" href="icon-192.png">
 </head>
 <body>
 
-<div class="phone-emulator">
+<div class="app-container">
 
     <div class="notification-container">
         <button class="notification-btn">
@@ -48,10 +52,9 @@
             </div>
 
             <div class="update-status-bar">
-                <div class="marquee-wrapper">
+                <div class="marquee-wrapper" id="marquee-container">
                     <div class="marquee-content">
-                        <span>• Документ оновлено о 10:01 | 02.02.2026 •&nbsp;</span>
-                        <span id="update-text-2"></span>
+                        <span class="update-text"></span>
                     </div>
                 </div>
             </div>

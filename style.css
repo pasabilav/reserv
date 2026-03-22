@@ -1,225 +1,176 @@
-/* Основные стили сброса */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif; /* Похож на системный */
-}
-
+/* 1. Базовые настройки экрана */
 :root {
-    /* Цвета приложения */
-    --bg-main: #e1decd;
-    --card-bg: #d5d3be;
+    --bg-color: #e0decd;
+    --card-color: #d8d8c8;
+    --accent-brown: #605040;
     --accent-orange: #f08010;
-    --text-brown: #605040;
 }
 
 body, html {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: var(--bg-main);
-    overflow: hidden; /* Запрещаем случайный скролл всей страницы */
+    background-color: #e0decd;
+    /*background-color: var(--bg-color);*/
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden; /* Запрещаем скролл самого экрана */
 }
 
-/* --- Шапка (Статус бар) --- */
-.status-bar {
-    height: 44px;
-    padding: 0 20px;
+/* 2. Главный контейнер (на весь дисплей) */
+.app-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 600;
-    font-size: 14px;
-    color: #000;
-    position: absolute;
-    top: 10px;
-    width: 100%;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    /* Учет челки/островка iPhone */
+    padding-top: env(safe-area-inset-top, 44px);
 }
 
-.system-icons {
-    display: flex;
-    gap: 5px;
-    align-items: center;
-}
-
-.text-lte {
-    font-size: 11px;
-}
-
-/* --- Кнопка уведомлений --- */
+/* 3. Верхняя кнопка (Сповіщення) */
 .notification-container {
-    margin-top: 60px; /* Отступ от статус-бара */
-    padding: 0 16px;
+    padding: 15px 20px;
     display: flex;
-    justify-content: flex-end; /* Прижать вправо */
+    justify-content: flex-end;
+    margin-bottom: 20px;
 }
 
 .notification-btn {
-    background-color: #fff;
+    font-size: 18px;
+    font-weight: 550;
+    background: #fff;
     border: none;
     padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: 500;
-    color: #000;
+    border-radius: 25px;
     display: flex;
     align-items: center;
     gap: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-.bell-icon {
-    font-size: 16px;
-}
-
-/* --- Основная карточка документа --- */
+/* 4. ЦЕНТРАЛЬНАЯ ОБЛАСТЬ (самое важное) */
 .content-area {
-    flex: 1; /* Занимает все свободное место */
-    padding: 20px 16px;
-    display: flex;
-    justify-content: center;
-}
-
-.id-card {
-    background-color: #d8d8c8; /* Серо-бежевый фон карточки */
-    width: 100%;
-    max-height: 500px; /* Ограничим высоту как на скрине */
-    border-radius: 16px;
-    border: 1px solid #c0c0b0; /* Легкая рамка */
-    overflow: hidden; /* Чтобы полоса обновления не вылезала */
+    flex: 1; /* Заставляет этот блок забрать ВСЁ свободное место */
     display: flex;
     flex-direction: column;
+    min-height: 0; /* Позволяет контенту внутри сжиматься/растягиваться правильно */
+    padding: 0 16px;
+    padding-bottom: 95px;/* 100px снизу — это запас, чтобы ФИО не уходило под меню */
+    box-sizing: border-box;
+    min-height: 0;
 }
 
-.bell-icon {
-    filter: brightness(0);
+/* 5. КАРТОЧКА (Растягивается на максимум) */
+.id-card {
+    /*background-color: var(--card-color);*/
+    background-color: #d4d3be;
+    border-radius: 10px;
+    border: 1px solid #afac99;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    /*height: 75vh;*/
+    height: 100%;
+    min-height: 65vh;
+    margin-bottom: 10vh;
+    box-sizing: border-box;
+    margin-top: 5vh;
+    /*min-height: min-content;*/
+    /*flex: 1; !* Растягивает карточку на всю высоту .content-area *!*/
 }
 
+/* Шапка внутри карточки */
 .card-header {
-    padding: 20px 20px 10px;
+    padding: 32px 24px 0px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 }
 
 .card-title {
-    font-size: 24px;
+    font-size: 28px;
+    /*letter-spacing: -0.01em;*/
+    font-family: 'Inter', sans-serif;
     font-weight: 500;
-    color: #000;
-}
-
-.coat-of-arms-container {
-    width: 35px; /* Ширина области, как на скрине */
-    display: flex;
-    justify-content: flex-end; /* Прижать логотип вправо к краю */
+    margin: 0;
 }
 
 .tryzub-logo {
-    display: block;
-    width: auto;      /* Сохраняем пропорции */
-    height: 38px;    /* Подбираем высоту, чтобы смотрелось гармонично */
-    object-fit: contain; /* Гарантирует, что картинка не растянется */
-    /* Если у PNG не идеальный черный цвет, раскомментируйте строку ниже,
-       чтобы сделать его чисто черным с помощью фильтра: */
-    /* filter: brightness(0); */
+    height: 48px;
+    width: auto;
 }
 
+/* Блок с данными (центр карточки) */
 .data-block {
-    padding: 0 20px 20px;
-    flex: 1; /* Растягиваем до разделителя */
+    padding: 10px 20px 30px 20px; /* Увеличил нижний паддинг до бегущей строки */
+    flex: 1; /* РАСТАЛКИВАЕТ шапку и футер, забирая пустоту в центре */
+    flex-direction: column;
+    justify-content: center;
 }
 
-.data-item {
-    margin-bottom: 12px;
+.data-item { margin-bottom: 24px; }
+.data-label { color: #666; font-size: 18px; font-weight: 550;
+    letter-spacing: 0.05px;
+    margin-bottom: 4px;
+    font-family: 'Inter', sans-serif;
+    /*font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;*/
 }
 
-.data-label {
-    font-size: 14px;
-    color: #606050; /* Серый текст метки */
-    margin-bottom: 2px;
+.data-value { font-size: 24px; font-weight: 500; margin: 0;
+    /* Небольшое сужение межбуквенного расстояния для сходства */
+    letter-spacing: -0.02em;
+    font-family: 'Inter', sans-serif;
 }
 
-.data-value {
-    font-size: 18px;
-    font-weight: 500;
-    color: #000;
-}
-
+/* 6. БЕГУЩАЯ СТРОКА */
 .update-status-bar {
-    background-color: #605040;
-    color: #dcdcc8;
-    font-size: 12px;
-    padding: 6px 0;
-    overflow: hidden; /* Скрываем всё, что выходит за пределы */
-    display: flex;
-    width: 100%;
+    background-color: var(--accent-brown);
+    color: #ffffff;
+    padding: 11px 0;
+    font-size: 17px;
+    overflow: hidden; /* Скрываем то, что выходит за границы экрана */
+    white-space: nowrap;
 }
 
 .marquee-wrapper {
     display: flex;
-    flex-wrap: nowrap;
-    /* Анимация теперь вешается на весь оберточный контейнер */
-    animation: continuous-scroll 15s linear infinite;
+    width: max-content; /* Важно: контейнер растягивается под контент */
+    will-change: transform;
 }
 
 .marquee-content {
     display: flex;
-    flex-shrink: 0; /* Запрещаем тексту сжиматься */
-    white-space: nowrap;
+    flex-shrink: 0;
 }
 
-.marquee-content span {
-    display: inline-block;
-    padding-right: 0; /* Убираем лишние отступы, если они мешают */
+/* Анимация на чистом CSS, которую запустит JS */
+@keyframes scroll-infinite {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Смещаем ровно на половину общей длины */
 }
 
-/* Новая анимация: двигаем ровно на ширину одного блока с текстом */
-@keyframes continuous-scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        /* Двигаем влево ровно на ширину первой копии текста */
-        transform: translateX(-50%);
-    }
-}
+/* 7. ФУТЕР КАРТОЧКИ (ФИО и кнопка +) */
 .card-footer {
-    padding: 20px;
+    padding: 24px 20px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    background: transparent;
 }
 
-.user-status {
-    font-size: 14px;
-    color: #606050;
-    margin-bottom: 8px;
-}
+.user-status { color: #666; font-size: 15px; margin-bottom: 8px; }
+.user-name { font-size: 26px; font-weight: 600; line-height: 1.2; margin: 0; }
 
-.user-name {
-    font-size: 22px;
-    font-weight: 500;
-    line-height: 1.2;
-    color: #000;
-}
-
-/* Оранжевая кнопка плюс */
 .add-btn {
-    width: 50px;
-    height: 50px;
-    background-color: #f08010; /* Оранжевый */
+    width: 56px;
+    height: 56px;
+    background-color: var(--accent-orange);
     border: none;
     border-radius: 50%;
-    color: #000;
-    font-size: 30px;
-    font-weight: 300;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-size: 32px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 /* --- Нижнее меню --- */
@@ -282,4 +233,8 @@ body, html {
     height: 5px;
     background-color: #000;
     border-radius: 3px;
+}
+
+.bell-icon {
+    filter: brightness(0);
 }
