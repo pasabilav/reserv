@@ -10,9 +10,10 @@ body, html {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #e0decd;
+    /*background-color: #e0decd;*/
+    background-color: #e0dfcd;
     /*background-color: var(--bg-color);*/
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Inter', sans-serif;
     overflow: hidden; /* Запрещаем скролл самого экрана */
 }
 
@@ -65,7 +66,8 @@ body, html {
 /* 5. КАРТОЧКА (Растягивается на максимум) */
 .id-card {
     /*background-color: var(--card-color);*/
-    background-color: #d4d3be;
+    /*background-color: #d4d3be;*/
+    background-color: #d5d2bf;
     border-radius: 10px;
     border: 1px solid #68624a;
     display: flex;
