@@ -170,7 +170,7 @@
                     <div class="marquee-content">
                         <span class="update-text">Документ оновлено о 10:01 | 02.02.2026 • Документ оновлено о 10:01 | 02.02.2026 • </span>
                     </div>
-                    <div class="marquee-content">
+                    <div class="marquee-content" id="marquee-container">
                         <span class="update-text"></span>
                     </div>
                 </div>
@@ -255,7 +255,8 @@
 
         </div>
     </div>
-    </div>
+
+</div>
 
 </div>
 
@@ -279,6 +280,11 @@
 <script src="stroka2.js"></script>
 <script src="menu.js"></script>
 <script src="page2.js"></script>
+
+
+<script src="swipe.js"></script>
+
+
 <script>
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/sw.js');

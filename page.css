@@ -13,6 +13,7 @@
     display: none; /* Скрыто по умолчанию */
     z-index: 2000;
     align-items: flex-end; /* Чтобы карточка вылезала снизу */
+    overflow: hidden;
 }
 
 .reserve-sheet {
@@ -29,6 +30,14 @@
     padding: 12px 0; /* Отступы по вертикали */
     /* Плавное появление снизу */
     animation: slideUpFullScreen 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+
+    /* Важно для плавной работы */
+    will-change: transform;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    transform: translateY(0); /* По умолчанию открыта, когда overlay display:flex */
+
+    /* Отключаем стандартные жесты браузера, чтобы они не мешали нашему JS */
+    touch-action: pan-y;
 
 }
 
