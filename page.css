@@ -23,22 +23,27 @@
     border-radius: 24px 24px 0 0;
     padding: 12px 16px 40px 16px;
     position: relative;
-    animation: slideUp 0.3s ease-out;
+    /*animation: slideUp 0.3s ease-out;*/
     height: calc(100vh - 50px);
     overflow-y: auto; /* Если контента много, будет скролл внутри */
     overflow-x: hidden;
     padding: 12px 0; /* Отступы по вертикали */
     /* Плавное появление снизу */
-    animation: slideUpFullScreen 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    /*animation: slideUpFullScreen 0.4s cubic-bezier(0.25, 1, 0.5, 1);*/
 
     /* Важно для плавной работы */
-    will-change: transform;
+    transform: translateY(100%);
     transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
     transform: translateY(0); /* По умолчанию открыта, когда overlay display:flex */
 
     /* Отключаем стандартные жесты браузера, чтобы они не мешали нашему JS */
     touch-action: pan-y;
 
+}
+
+/* Этот класс будем добавлять через JS для открытия */
+.reserve-sheet.active {
+    transform: translateY(0);
 }
 
 /* Индикатор свайпа сверху */
