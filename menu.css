@@ -81,8 +81,12 @@
 }
 
 .sheet-icon {
-    font-size: 24px;
-    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    /*font-size: 24px;*/
+    /*color: #333;*/
     width: 30px; /* Фиксированная ширина для иконок */
     text-align: center;
 }
@@ -90,4 +94,5 @@
 .sheet-item span {
     font-size: 17px; /* Размер шрифта как в iOS */
     font-weight: 500;
+    font-family: 'Inter', sans-serif;
 }
