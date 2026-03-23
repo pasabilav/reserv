@@ -264,17 +264,9 @@
     // Допустим, у тебя есть кнопка в меню с id="openReserveBtn"
     const openBtn = document.getElementById('openReserveBtn');
     const overlay = document.getElementById('reserveOverlay');
-    const sheet = document.querySelector('.reserve-sheet'); // добавили ссылку на саму шторку
 
-    openBtn.addEventListener('click', (e) => {
-        e.preventDefault();
+    openBtn.addEventListener('click', () => {
         overlay.style.display = 'flex';
-
-        // Даем браузеру 10мс, чтобы применить display: flex,
-        // прежде чем запускать анимацию движения вверх
-        setTimeout(() => {
-            sheet.classList.add('active');
-        }, 10);
     });
 
     // Закрытие при клике на темную область
@@ -284,23 +276,6 @@
         }
     });
 </script>
-<!--<script>-->
-<!--    // Допустим, у тебя есть кнопка в меню с id="openReserveBtn"-->
-<!--    const openBtn = document.getElementById('openReserveBtn');-->
-<!--    const overlay = document.getElementById('reserveOverlay');-->
-<!--    -->
-
-<!--    openBtn.addEventListener('click', () => {-->
-<!--        overlay.style.display = 'flex';-->
-<!--    });-->
-
-<!--    // Закрытие при клике на темную область-->
-<!--    overlay.addEventListener('click', (e) => {-->
-<!--        if (e.target === overlay) {-->
-<!--            overlay.style.display = 'none';-->
-<!--        }-->
-<!--    });-->
-<!--</script>-->
 
 <script src="stroka2.js"></script>
 <script src="menu.js"></script>

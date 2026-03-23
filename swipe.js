@@ -14,25 +14,20 @@ function openReserveSheet() {
 
 // Закрытие
 function closeReserveSheet() {
-    sheet.classList.remove('active'); // Убираем класс (запускает CSS переход вниз)
-    sheet.style.transform = 'translateY(100%)'; // Принудительно для JS-перетаскивания
-
+    sheet.style.transform = 'translateY(100%)';
     setTimeout(() => {
         overlay.style.display = 'none';
-        sheet.style.transform = ''; // Очищаем временные сдвиги пальцем
-    }, 300);
+    }, 300); // время совпадает с transition в CSS
 }
 
 // Начало касания
 sheet.addEventListener('touchstart', (e) => {
-    // Если тянем за ручку - разрешаем свайп всегда
-    const isHandle = e.target.classList.contains('sheet-handle');
-
-    if (!isHandle && sheet.scrollTop > 0) return;
+    // Если скролл внутри контента не в самом верху, не активируем свайп на закрытие
+    if (sheet.scrollTop > 0) return;
 
     startY = e.touches[0].clientY;
     isDragging = true;
-    sheet.style.transition = 'none';
+    sheet.style.transition = 'none'; // Убираем анимацию при движении пальца
 });
 
 // Движение пальца
