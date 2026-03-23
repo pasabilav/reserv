@@ -34,8 +34,7 @@
     /* Важно для плавной работы */
     transform: translateY(100%);
     transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-    transform: translateY(0); /* По умолчанию открыта, когда overlay display:flex */
-
+    will-change: transform;
     /* Отключаем стандартные жесты браузера, чтобы они не мешали нашему JS */
     touch-action: pan-y;
 
@@ -43,7 +42,7 @@
 
 /* Этот класс будем добавлять через JS для открытия */
 .reserve-sheet.active {
-    transform: translateY(0);
+    transform: translateY(0) !important;
 }
 
 /* Индикатор свайпа сверху */
