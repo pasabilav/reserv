@@ -24,9 +24,11 @@
     animation: slideUp 0.3s ease-out;
     height: calc(100vh - 50px);
     overflow-y: auto; /* Если контента много, будет скролл внутри */
+    overflow-x: hidden;
     padding: 12px 0; /* Отступы по вертикали */
     /* Плавное появление снизу */
     animation: slideUpFullScreen 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+
 }
 
 /* Индикатор свайпа сверху */
