@@ -6,6 +6,13 @@
     <title>Резерв+ Интерфейс</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+<!--    выпадающее меню-->
+    <link rel="stylesheet" href="menu.css">
+<!--    бегущая строка-->
+    <link rel="stylesheet" href="status_bar.css">
+<!--основная страница-->
+    <link rel="stylesheet" href="page.css">
+
     <link rel="manifest" href="/manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -21,6 +28,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
 
     <link rel="apple-touch-icon" href="icon-192.png">
 </head>
@@ -39,7 +47,7 @@
 
     <main class="content-area">
         <div class="id-card">
-
+<!--Резерв ID + Герб-->
             <div class="card-header">
                 <div class="card-title-container">
                     <h1 class="card-title">Резерв ID</h1>
@@ -49,7 +57,7 @@
 
                 </div>
             </div>
-
+<!--Информация о пользователе-->
             <div class="data-block">
                 <div class="data-item">
                     <p class="data-label">Дата народження:</p>
@@ -60,7 +68,7 @@
                     <p class="data-value">03.05.2026</p>
                 </div>
             </div>
-
+<!--Бегущая строка-->
             <div class="update-status-bar">
                 <div class="marquee-wrapper" id="marquee-container">
                     <div class="marquee-content">
@@ -68,13 +76,13 @@
                     </div>
                 </div>
             </div>
-
+<!--ФИО-->
             <div class="card-footer">
                 <div class="user-info">
                     <p class="user-status">Військовозобов'язаний</p>
-                    <p class="user-name">ПОСОБІЛОВ<br>Богдан<br>Романович</p>
+                    <p class="user-name" id="firstName">ПОСОБІЛОВ<br>Богдан<br>Романович</p>
                 </div>
-                <button class="add-btn"><span>+</span></button>
+                <button class="add-btn" id="add-btn"><span>+</span></button>
             </div>
 
         </div>
@@ -107,7 +115,6 @@
             <div class="nav-icon">
                 <img src="img/logo/vacancies.png" width="28" />
             </div>
-<!--            <div class="nav-icon icon-vacancies"></div>-->
 
             <div class="nav-label">Вакансії</div>
         </a>
@@ -115,19 +122,122 @@
             <div class="nav-icon">
                 <img src="img/logo/menu.png" width="28" />
             </div>
-<!--            <div class="nav-icon icon-menu"></div>-->
 
             <div class="nav-label">Меню</div>
         </a>
 <!--        <div class="ios-home-bar"></div>-->
     </nav>
+<!--Всплывающее Меню-->
+    <div class="menu-overlay" id="menu-overlay"></div>
+
+    <div class="bottom-sheet" id="bottom-sheet">
+        <div class="sheet-handle"></div>
+
+            <nav class="sheet-nav">
+                <a href="#" class="sheet-item" id="openReserveBtn">
+                    <div class="sheet-icon icon-info">ℹ</div> <span>Переглянути документ</span>
+                </a>
+
+                <a href="#" class="sheet-item">
+                    <div class="sheet-icon icon-pdf">📄</div> <span>Завантажити PDF</span>
+                </a>
+
+                <a href="#" class="sheet-item">
+                    <div class="sheet-icon icon-refresh">↻</div> <span>Оновити документ</span>
+                </a>
+            </nav>
+        </div>
+<!--Вторая страница-->
+    <div class="reserve-overlay" id="reserveOverlay">
+        <div class="reserve-sheet">
+            <div class="sheet-handle"></div>
+
+            <div class="sheet-header">
+                <h1 class="sheet-title">Резерв ID</h1>
+                <img src="img/gerb.png" alt="Герб України" alt="Герб" class="sheet-logo">
+            </div>
+
+            <div class="update-status-bar reserve-marquee">
+                <div class="marquee-wrapper" id="marquee-container-reserve">
+                    <div class="marquee-content">
+                        <span class="update-text">Документ оновлено о 10:01 | 02.02.2026 • Документ оновлено о 10:01 | 02.02.2026 • </span>
+                    </div>
+                    <div class="marquee-content">
+                        <span class="update-text"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-block block-deferment">
+                <div class="block-row">
+                    <p class="user-name">ПОСОБІЛОВ<br>Богдан<br>Романович</p>
+                </div>
+            </div>
+
+            <div class="info-block block-deferment">
+                <div class="block-row">
+                    <span class="label">Відстрочка до:</span>
+                    <span class="value-date">03.05.2026</span>
+                </div>
+                <div class="block-row stack">
+                    <span class="label">Тип відстрочки:</span>
+                    <span class="value-text">бронювання</span>
+                </div>
+            </div>
+
+            <div class="info-block block-vlk">
+                <div class="block-row stack">
+                    <span class="label">Постанова ВЛК:</span>
+                    <span class="value-text">Придатний</span>
+                </div>
+                <div class="block-row">
+                    <span class="label">Дата ВЛК:</span>
+                    <span class="value-date">01.10.2025</span>
+                </div>
+            </div>
+
+            <div class="info-block block-tck">
+                <div class="block-row stack">
+                    <span class="label label-bold">ТЦК та СП:</span>
+                    <span class="value-text long-text">
+                Дніпровський районний у м.Києві територіальний центр комплектування та соціальної підтримки
+            </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
 
 </div>
-<script src="script.js"></script>
+
+<script>
+    // Допустим, у тебя есть кнопка в меню с id="openReserveBtn"
+    const openBtn = document.getElementById('openReserveBtn');
+    const overlay = document.getElementById('reserveOverlay');
+
+    openBtn.addEventListener('click', () => {
+        overlay.style.display = 'flex';
+    });
+
+    // Закрытие при клике на темную область
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+            overlay.style.display = 'none';
+        }
+    });
+</script>
+
+<script src="stroka2.js"></script>
+<script src="menu.js"></script>
+<script src="page2.js"></script>
 <script>
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/sw.js');
     }
 </script>
+
+
+
 </body>
 </html>

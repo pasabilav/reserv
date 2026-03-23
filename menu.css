@@ -1,0 +1,93 @@
+/* --- Стили для Шторки Меню --- */
+
+/* 1. Черный фон-затемнение */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5); /* Полупрозрачный черный */
+    z-index: 1000; /* Очень высоко, но ниже самой шторки */
+
+    /* Скрыто по умолчанию */
+    opacity: 0;
+    pointer-events: none; /* Чтобы можно было кликать "сквозь" него, пока скрыто */
+    transition: opacity 0.3s ease; /* Плавное затемнение */
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    pointer-events: auto; /* Включаем клики */
+}
+
+/* 2. Сама шторка ( Bottom Sheet ) */
+.bottom-sheet {
+    position: fixed;
+    bottom: 0; /* Привязать к низу */
+    left: 50%;
+    transform: translateX(-50%) translateY(100%); /* СПРЯТАНО ПОД ЭКРАН */
+
+    width: 100%;
+    max-width: 375px; /* Ширина вашего iPhone Pro Max */
+    background-color: #fff;
+
+    border-top-left-radius: 20px; /* Скругление сверху */
+    border-top-right-radius: 20px;
+    box-shadow: 0 -5px 25px rgba(0,0,0,0.2);
+
+    z-index: 1001; /* Выше всех */
+    transition: transform 0.3s ease; /* Анимация выплывания */
+
+    /* Чтобы текст не налезал на ios-home-bar */
+    padding-bottom: env(safe-area-inset-bottom, 20px);
+}
+
+/* Класс, который заставляет шторку выплыть */
+.bottom-sheet.active {
+    /* transform: translateX(-50%) + transform: translateY(0); */
+    transform: translate(-50%, 0);
+}
+
+/* 3. Детали интерфейса */
+.sheet-handle {
+    width: 40px;
+    height: 5px;
+    background-color: #ccc;
+    border-radius: 3px;
+    margin: 12px auto; /* Центрируем полоску */
+}
+
+.sheet-nav {
+    padding: 10px 20px 20px;
+}
+
+.sheet-item {
+    text-decoration: none;
+    color: #000;
+    display: flex;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid #f0f0f0; /* Легкая разделительная полоса */
+    gap: 16px; /* Отступ между иконкой и текстом */
+}
+
+.sheet-item:last-child {
+    border-bottom: none; /* У последней опции нет полосы */
+}
+
+.sheet-item:active {
+    background-color: #f8f8f8; /* Легкое затемнение при клике */
+}
+
+.sheet-icon {
+    font-size: 24px;
+    color: #333;
+    width: 30px; /* Фиксированная ширина для иконок */
+    text-align: center;
+}
+
+.sheet-item span {
+    font-size: 17px; /* Размер шрифта как в iOS */
+    font-weight: 500;
+}

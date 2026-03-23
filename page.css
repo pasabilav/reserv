@@ -1,0 +1,187 @@
+:root {
+    --reserve-bg: #e2e3cb; /* Тот самый бежево-зеленоватый оттенок */
+    --reserve-dark: #6b4e2a; /* Коричневый цвет полоски */
+}
+
+.reserve-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: none; /* Скрыто по умолчанию */
+    z-index: 2000;
+    align-items: flex-end; /* Чтобы карточка вылезала снизу */
+}
+
+.reserve-sheet {
+    width: 100%;
+    background-color: var(--reserve-bg);
+    border-radius: 24px 24px 0 0;
+    padding: 12px 16px 40px 16px;
+    position: relative;
+    animation: slideUp 0.3s ease-out;
+    height: calc(100vh - 50px);
+    overflow-y: auto; /* Если контента много, будет скролл внутри */
+    padding: 12px 0; /* Отступы по вертикали */
+    /* Плавное появление снизу */
+    animation: slideUpFullScreen 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Индикатор свайпа сверху */
+.sheet-handle {
+    width: 40px;
+    height: 4px;
+    background: #000;
+    border-radius: 2px;
+    margin: 0 auto 20px auto;
+}
+
+.sheet-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.sheet-title {
+    font-size: 32px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.sheet-logo {
+    height: 40px;
+}
+
+/* Коричневая полоска */
+.update-status {
+    background-color: var(--reserve-dark);
+    color: white;
+    font-size: 14px;
+    padding: 8px 16px;
+    margin: 20px -16px; /* Растягиваем на всю ширину */
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Белая карточка */
+.user-info-card {
+    background: white;
+    border-radius: 20px;
+    padding: 24px;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.user-name {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* Анимация появления */
+@keyframes slideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+}
+
+/* Анимация на весь экран */
+@keyframes slideUpFullScreen {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+}
+
+/* Черная полоска-хендл сверху для красоты */
+.sheet-handle {
+    width: 40px;
+    height: 5px;
+    background: #000;
+    border-radius: 3px;
+    margin: 8px auto 20px auto;
+    opacity: 0.8;
+}
+
+/*update v2*/
+/* Общие стили для информационных блоков */
+.info-block {
+    background-color: #ffffff;
+    border-radius: 20px;
+    margin: 12px 16px; /* Отступы от краев экрана */
+    overflow: hidden; /* Чтобы линии не вылезали за скругления */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+}
+
+/* Каждая строка внутри блока */
+.block-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px; /* Внутренние отступы как в оригинале */
+    border-bottom: 1px solid #f0f0f0; /* Тонкая серая линия между строками */
+}
+/* Настройка для строк, где текст идет друг под другом */
+.block-row.stack {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+/* Стили текста (Шрифт Inter) */
+.label {
+    color: #000000;
+    font-size: 20px; /* Крупный размер как на фото */
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.value-date {
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+}
+
+.value-text {
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+}
+
+/* Жирный заголовок для ТЦК */
+.label-bold {
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+
+/* Текст названия ТЦК */
+.long-text {
+    font-size: 19px;
+    line-height: 1.3;
+    font-weight: 400;
+}
+
+/*!* Дополнительно: стиль для "бегущей строки" (Marquee) *!*/
+/*.update-status-bar {*/
+/*    background-color: #5d5740; !* Темный коричнево-оливковый *!*/
+/*    color: white;*/
+/*    padding: 10px 0;*/
+/*    margin: 15px 0;*/
+/*    font-size: 14px;*/
+/*    overflow: hidden;*/
+/*    display: flex;*/
+/*    white-space: nowrap;*/
+/*}*/
+
+/*.marquee-content {*/
+/*    display: inline-block;*/
+/*    padding-left: 100%;*/
+/*    animation: marquee 15s linear infinite;*/
+/*}*/
+
+/*@keyframes marquee {*/
+/*    0% { transform: translate(0, 0); }*/
+/*    100% { transform: translate(-100%, 0); }*/
+/*}*/

@@ -1,0 +1,19 @@
+/* Специфические правки для строки именно внутри меню Резерв */
+.reserve-marquee {
+    margin: 20px -16px; /* -16px компенсирует padding родителя .reserve-sheet, чтобы строка была на всю ширину */
+    padding: 10px 0 !important; /* Делаем её чуть выше, как в оригинале */
+    background-color: #6b4b1a; /* Твой коричневый цвет */
+    font-size: 16px; /* В меню текст чуть мельче, чем на главной */
+    font-weight: 400;
+}
+
+/* Запускаем анимацию, которую ты уже прописал ранее */
+.reserve-marquee .marquee-wrapper {
+    animation: scroll-infinite 15s linear infinite;
+}
+
+/* На всякий случай дублируем твою анимацию, если она в другом файле */
+@keyframes scroll-infinite {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
