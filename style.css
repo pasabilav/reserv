@@ -115,7 +115,7 @@ body, html {
 }
 
 .data-item { margin-bottom: 24px; }
-.data-label { color: #4f4c3f; font-size: 14px; font-weight: 550;
+.data-label { color: #4f4c3f; font-size: 15px; font-weight: 550;
     letter-spacing: 0.1px;
     margin-bottom: 4px;
     margin-top: 5px;
@@ -123,56 +123,11 @@ body, html {
     /*font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;*/
 }
 
-.data-value { font-size: 16px; font-weight: 500; margin: 0;
+.data-value { font-size: 17px; font-weight: 500; margin: 0;
     /* Небольшое сужение межбуквенного расстояния для сходства */
     letter-spacing: -0.02em;
     font-family: 'Inter', sans-serif;
     padding-top: 6px;
-}
-
-/* 6. БЕГУЩАЯ СТРОКА */
-.update-status-bar {
-    /* background-color: var(--accent-brown); */
-    background-color: #6b4b1a;
-    color: #ffffff;
-    padding: 4px 0;
-    font-size: 13px;
-    overflow: hidden; /* Скрываем то, что выходит за границы экрана */
-    white-space: nowrap;
-    font-family: 'Inter', sans-serif;
-}
-
-/* Уменьшаем бегущую строку только на второй странице (в шторке) */
-.update-status-bar.reserve-marquee {
-    height: 15px !important;
-    padding: 4px 0px !important;
-    font-size: 13px; /* Немного уменьшаем шрифт, если нужно */
-    line-height: 1.2; /* Убираем лишнее пустое пространство строк */
-    align-items: center;
-    display: flex;
-}
-/* На всякий случай выравниваем и внутренний контейнер */
-.reserve-marquee .marquee-wrapper {
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-
-.marquee-wrapper {
-    display: flex;
-    width: max-content; /* Важно: контейнер растягивается под контент */
-    will-change: transform;
-}
-
-.marquee-content {
-    display: flex;
-    flex-shrink: 0;
-}
-
-/* Анимация на чистом CSS, которую запустит JS */
-@keyframes scroll-infinite {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); } /* Смещаем ровно на половину общей длины */
 }
 
 /* 7. ФУТЕР КАРТОЧКИ (ФИО и кнопка +) */
@@ -184,8 +139,8 @@ body, html {
     background: transparent;
 }
 
-.user-status { font-family: 'Inter', sans-serif; color: #666; font-size: 14px; margin-bottom: 8px; font-weight: 550;letter-spacing: 0.05px; }
-.user-name { font-family: 'Inter', sans-serif; font-size: 22px; font-weight: 500; line-height: 1; margin: 0; letter-spacing: 0.01px; }
+.user-status { font-family: 'Inter', sans-serif; color: #666; font-size: 15px; margin-bottom: 8px; font-weight: 550;letter-spacing: 0.05px; }
+.user-name { font-family: 'Inter', sans-serif; font-size: 23px; font-weight: 500; line-height: 1; margin: 0; letter-spacing: 0.01px; }
 .bell {
     height: 18px;
     width: 18px;
