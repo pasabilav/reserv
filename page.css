@@ -88,7 +88,7 @@
 }
 
 .user-name {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 700;
     line-height: 1.2;
     /*text-transform: uppercase;*/
@@ -147,7 +147,7 @@
 }
 /* Стили текста (Шрифт Inter) */
 .label {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500; /* Чуть тоньше, чем сама дата */
     color: #000;
     margin: 0;
@@ -160,32 +160,32 @@
 
 .military-status {
     font-family: 'Inter', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     padding: 0 20px;
 }
 
 .birth-date-section .label {
     font-family: 'Inter', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     padding: 0 20px;
 }
 
 .birth-date-section .date-value {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     padding: 0 20px;
 }
 
 .value-date {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     color: #000;
 }
 
 .value-text {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     color: #000;
 }
@@ -199,7 +199,7 @@
 
 /* Текст названия ТЦК */
 .long-text {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.3;
     font-weight: 400;
 }

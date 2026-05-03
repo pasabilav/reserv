@@ -12,6 +12,52 @@
     animation: scroll-infinite 15s linear infinite;
 }
 
+/* Уменьшаем бегущую строку только на второй странице (в шторке) */
+.update-status-bar.reserve-marquee {
+    height: 15px !important;
+    padding: 4px 0px !important;
+    font-size: 13px; /* Немного уменьшаем шрифт, если нужно */
+    line-height: 1.2; /* Убираем лишнее пустое пространство строк */
+    align-items: center;
+    display: flex;
+}
+/* На всякий случай выравниваем и внутренний контейнер */
+.reserve-marquee .marquee-wrapper {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* 6. БЕГУЩАЯ СТРОКА */
+.update-status-bar {
+    /* background-color: var(--accent-brown); */
+    background-color: #6b4b1a;
+    color: #ffffff;
+    padding: 4px 0;
+    font-size: 13px;
+    overflow: hidden; /* Скрываем то, что выходит за границы экрана */
+    white-space: nowrap;
+    font-family: 'Inter', sans-serif;
+}
+
+
+.marquee-wrapper {
+    display: flex;
+    width: max-content; /* Важно: контейнер растягивается под контент */
+    will-change: transform;
+}
+
+.marquee-content {
+    display: flex;
+    flex-shrink: 0;
+}
+
+/* Анимация на чистом CSS, которую запустит JS */
+@keyframes scroll-infinite {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Смещаем ровно на половину общей длины */
+}
+
 /* На всякий случай дублируем твою анимацию, если она в другом файле */
 @keyframes scroll-infinite {
     0% { transform: translateX(0); }
